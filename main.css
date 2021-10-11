@@ -1,0 +1,41 @@
+img{
+    
+    object-fit: contain;
+    object-position: center;
+    
+}
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie{
+    width: 100%;
+    max-width: 300px;
+    text-decoration: none;
+    text-align: center;
+    list-style-type: none;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    border: 1px solid tomato;
+    padding: 15px 15px;
+    border-radius: 10px;
+}
+.container{
+    margin: 0 auto;
+}
+.js-movie-form{
+    text-align: center;
+    
+    
+}
+.js-movie-search{
+    padding: 10px 50px;
+    border: 1px solid tomato;
+    border-radius: 10px;
+}
+.movie-btn{
+    border: 1px solid tomato;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}

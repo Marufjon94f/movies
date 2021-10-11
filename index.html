@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-light">
+    <main class="py-5">
+      <div class="container">
+        <form class="js-movie-form" method="GET" id="form">
+          <input class="js-movie-search" type="search"/>
+
+          <button class="movie-btn" type="submit" form="form">Enter</button>
+        </form>
+        <div class="result-title">Natija
+          <!-- <li class="movie-outcome col-md-3 mb-3">
+            <div class="movies_card card border-0 shadow-sm">
+              <img
+                class="movies_img-outcome card-img-top"
+                alt="picture movies"
+                width="300"
+                height="200"
+              />
+    
+              <div class="moves_card-body card-body text-center">
+                <h3 class="movie-title-outcome h4 card-title">Movie Name</h3>
+                <p class="movie-date-outcome">2000</p>
+                <p class="movie-type-outcome">horror</p> -->
+
+        </div>
+        <ul class="movies row list-unstyled"></ul>
+      </div>
+    </main>
+
+    <template id="movies-card-template">
+      <li class="movie col-md-3 mb-3">
+        <div class="movies_card card border-0 shadow-sm">
+          <img
+            class="movies_img card-img-top"
+            alt="picture movies"
+            width="300"
+            height="200"
+          />
+
+          <div class="moves_card-body card-body text-center">
+            <h3 class="movie-title h4 card-title">Movie Name</h3>
+            <p class="movie-date">2000</p>
+            <p class="movie-type">horror</p>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <script src="./movies.js"></script>
+    <script src="./utilities.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
