@@ -6,27 +6,12 @@ var elMovieResult = $_(".result-title")
 
 elMovies.innerHTML = "";
 
-var createMoviesElement = function (movie) {
-  var elNewMovie = elMoviesTemplate.cloneNode(true);
-
-  elNewMovie.querySelector(".movies_img").src =
-    "https:upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg";
-  elNewMovie.querySelector(".movie-title").textContent = movie.Title;
-  elNewMovie.querySelector(".movie-type").textContent = movie.Categories.split("|").join(", ");
-  elNewMovie.querySelector(".movie-date").textContent = movie.movie_year;
-  
-
-  return elNewMovie;
-};
-
-movies.forEach(function (movie) {
-  elMovies.appendChild(createMoviesElement(movie));
-});
+var sliceMovie = movies.slice(0,100);
 
 // Normalizing ***MOVIES***
 var normalizedMovies = [];
 
-for (var i = 0; i < movies.length; i++){
+for (var i = 0; i < sliceMovie.length; i++){
   normalizedMovies.push({
     id: i +1,
     title: movies[i].Title.toString(),
@@ -36,6 +21,30 @@ for (var i = 0; i < movies.length; i++){
     imdbId:movies[i].imdb_rating,
   });
 }
+console.log(normalizedMovies);
+
+var createMoviesElement = function (movie) {
+  var elNewMovie = elMoviesTemplate.cloneNode(true);
+ 
+  
+  elNewMovie.querySelector(".movies_img").src =
+    "https:upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg";
+  elNewMovie.querySelector(".movie-title").textContent = movie.title;
+  elNewMovie.querySelector(".movie-type").textContent = movie.categories.join(", ");
+  elNewMovie.querySelector(".movie-date").textContent = movie.year;
+  
+  
+  
+
+  return elNewMovie;
+};
+
+normalizedMovies.forEach(function (movie) {
+  elMovies.appendChild(createMoviesElement(movie));
+});
+
+
+
 
 elMovieForm.addEventListener("submit", function (evt){
   evt.preventDefault();
@@ -45,16 +54,25 @@ elMovieForm.addEventListener("submit", function (evt){
   var searchQuery = new RegExp(inputMovie, "gi");
 
   var searchResults = [];
+  // elMovieForm.filter(movie => movie.Title.match(searchQuery))
+ 
+  // console.log(searchResults); 
+  // createMoviesElement(searchResults)
+  
   // var searchResults = movies.filter(function(movie){
   //   return movie.Title = match(searchQuery);
   // });
-
-  // elMovieResult.textContent = searchResults[0].Title;
-
+  // createMoviesElement(searchResults);
+ console.log(searchQuery);
   normalizedMovies.forEach(function(movie){
     if (movie.title.match(searchQuery)) {
       searchResults.push(movie);
-      elMovieResult.textContent = searchResults[0].title, year, categories;
     }
   });
+
+  console.log(searchResults);
+  elMovies.innerHTML = "";
+  searchResults.forEach(function (movie) {
+    elMovies.appendChild(createMoviesElement(movie));
+});
 });

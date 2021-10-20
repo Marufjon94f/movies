@@ -10,27 +10,15 @@
   <body class="bg-light">
     <main class="py-5">
       <div class="container">
-        <form class="js-movie-form" method="GET" id="form">
-          <input class="js-movie-search" type="search"/>
-
-          <button class="movie-btn" type="submit" form="form">Enter</button>
+        <form class="js-movie-form" method="GET" id="form" >
+          <input class="js-movie-search" type="search" aria-label="input-movie"/>
+<select class="movie-select-sort">
+  <option class="movie-option-a">A-Z</option>
+  <option class="movie-option-z">Z-A</option>
+</select>
+          <button class="movie-btn" type="submit" for="form">Enter</button>
         </form>
-        <div class="result-title">Natija
-          <!-- <li class="movie-outcome col-md-3 mb-3">
-            <div class="movies_card card border-0 shadow-sm">
-              <img
-                class="movies_img-outcome card-img-top"
-                alt="picture movies"
-                width="300"
-                height="200"
-              />
-    
-              <div class="moves_card-body card-body text-center">
-                <h3 class="movie-title-outcome h4 card-title">Movie Name</h3>
-                <p class="movie-date-outcome">2000</p>
-                <p class="movie-type-outcome">horror</p> -->
-
-        </div>
+       
         <ul class="movies row list-unstyled"></ul>
       </div>
     </main>
@@ -39,6 +27,7 @@
       <li class="movie col-md-3 mb-3">
         <div class="movies_card card border-0 shadow-sm">
           <img
+          src="https://www.themoviedb.org/t/p/original/gNDSKqujCCaCp8azq4fuiqGorTp.jpg"
             class="movies_img card-img-top"
             alt="picture movies"
             width="300"
